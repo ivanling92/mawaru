@@ -14,6 +14,18 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+		<script src="http://malsup.github.com/jquery.form.js"></script> 
+		<script> 
+			// wait for the DOM to be loaded 
+			$(document).ready(function() { 
+				// bind 'myForm' and provide a simple callback function 
+				$('#myForm').ajaxForm(function() { 
+					window.location = 'http://mawaru.online';
+				}); 
+			}); 
+		</script> 
+
 	</head>
 	<body class="is-loading">
 
@@ -24,12 +36,19 @@
 					<section id="main">
 						<header>
 							<span class="avatar"><img src="images/avatar.jpg" alt="" /></span>
-							<h1>Project MAWARU</h1>
-							<p>Exciting stuff coming soon!</p>
+							<h1>Project MAWARU: Sarahah Troller</h1>
+							<p>Enter your friend's Sarahah URL here and watch as they get lots of Trump Tweets in their private messages.
+							</p>
 						</header>
-						
+						<form id="myForm" action="https://formspree.io/admin@ivanling.xyz" method="POST">
+							<div class="field">
+								<input type="text" name="name" id="name" placeholder="Sarahah URL to be trolled" />
+							</div>
+							<ul class="actions">
+								<input type="submit" value="Start Trolling" />
+							</ul>
+						</form>
 						<hr />
-						
 						
 						<footer>
 							<ul class="icons">
